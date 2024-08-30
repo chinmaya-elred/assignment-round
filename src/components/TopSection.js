@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import BlueTick from "../assets/Images/bluetick.svg";
-import Case from "../assets/Images/case.png";
-import Map from "../assets/Images/map.png";
-import MiniCard from "../assets/Images/minicard.png";
+import BlueTick from "../assets/images/bluetick.svg";
+import Case from "../assets/images/case.png";
+import Map from "../assets/images/map.png";
+import MiniCard from "../assets/images/minicard.png";
 
 function TopSection({ data }) {
   const capitalize = (str) => {
