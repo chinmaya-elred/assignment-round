@@ -9,13 +9,13 @@ function Comments({ data }) {
   };
 
   return (
-    <div className="Comments-div h-[300px]">
-      <div className="flex justify-between">
+    <div className="Comments-div">
+      <div className="flex justify-between sticky">
         <div className="text-xl text-white font-semibold">Comments</div>
         <div className="text-md text-white font-semibold cursor-pointer">See All</div>
       </div>
 
-      <div>
+      <div className="comment-scroll">
         {[...Array(10)].map((_, index) => (
           <div className="flex gap-3 mt-5" key={index}>
             <Image
