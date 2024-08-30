@@ -29,6 +29,14 @@ body {
   scrollbar-width: none;
 }
 
+.mainContainer-2{
+  width: 375px;
+  max-width: 375px;
+  margin: 0 auto;
+  height: 100vh;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
 .profileHeader {
   height: 46px;
   padding: 20px;
@@ -130,11 +138,13 @@ body {
 .card-container {
   border: 1px solid #fff;
   margin: 20px;
-  height: 90vh;
+  /* height: 90vh; */
   border-radius: 8px;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 25px;
+
 }
 
 .option-wrapper {

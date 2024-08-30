@@ -38,8 +38,8 @@ function ShareCard(props) {
         <meta property="og:title" content={data?.cardTitle ?? ""} key="title" />
         <meta property="og:description" content={data?.description ?? ""} />
       </Head>
-      <div className="d-flex align-item-center justify-content-center height-100">
-        <div className="mainContainer">
+      <div className="d-flex align-item-center justify-content-center w-full">
+        <div className="mainContainer-2">
           <Image
             className="background-image"
             src={BgImage}
@@ -47,7 +47,7 @@ function ShareCard(props) {
               position: "absolute",
               top: 0,
               width: "375px",
-              height: "100%",
+              height: "111vh",
               backgroundSize: "contain",
               backgroundPosition: "center",
               zIndex: 1,
@@ -59,7 +59,7 @@ function ShareCard(props) {
               position: "absolute",
               top: 0,
               width: "375px",
-              height: "100%",
+              height: "111vh",
               backgroundColor: "rgba(0, 0, 0, 0.3)",
               zIndex: 2,
             }}
