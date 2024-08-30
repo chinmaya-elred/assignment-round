@@ -13,16 +13,56 @@ import S from "../assets/images/S.svg";
 function CardData({ data }) {
   const images = [Award1, Award2, Award3];
   const images2 = [Award1, Award2, Award3, Award1, Award2];
-  const capitalize = (str) => {
+  
+  const url = typeof window !== "undefined" ? window.location.href : ""; // Define the URL here
+
+  const isFirefox =
+    typeof navigator !== "undefined" &&
+    navigator.userAgent.toLowerCase().includes("firefox");
+  const isMacOs =
+    typeof navigator !== "undefined" &&
+    navigator.userAgent.toLowerCase().includes("mac");
+
+    const capitalize = (str) => {
     if (!str) return "";
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   };
 
+  const handleShare = async () => {
+    const time = new Date().getTime().toString().slice(-6);
+    const urlWithTime = url + `&t=${time}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          url: urlWithTime,
+        });
+      } catch (error) {
+        console.error("Error sharing:", error);
+      }
+    } else {
+      handleUnsupportedBrowser();
+    }
+  };
+
+  const handleUnsupportedBrowser = () => {
+    if (
+      navigator.userAgent.includes("Firefox") &&
+      navigator.userAgent.includes("Windows")
+    ) {
+      toast("Web share not supported by Windows Firefox");
+    } else if (isFirefox && isMacOs) {
+      toast("Web share not supported by MacOS Firefox");
+    } else {
+      toast("Web share not supported by MacOS Chrome");
+    }
+  };
+
+
   return (
     <div className="card-container">
       <div className="flex gap-3 mt-3 ml-auto mr-[20px]">
-        <Image src={Share} alt="error" width={20} style={{ height: "20px" }} />
-        <div className="text-white font-semibold">Share</div>
+        <Image src={Share} alt="error" width={20} style={{ height: "20px" }} onClick={handleShare} className="cursor-pointer"/>
+        <div className="text-white font-semibold cursor-pointer" onClick={handleShare}>Share</div>
       </div>
 
       <div className="mt-[60px] m-auto flex flex-col items-center justify-center">
