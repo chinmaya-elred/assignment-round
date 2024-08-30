@@ -65,8 +65,9 @@ body {
   margin-top: 26px;
   flex-direction: column;
   margin: 20px;
+  }
 
-  .share-icon-div {
+  .share_icon_div {
     width: 36px;
     height: 36px;
     background: rgba(255, 255, 255, 0.4);
@@ -75,20 +76,15 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
-    img {
-      pointer-events: none;
-    }
   }
 
-  .share-text {
-    font-family: "AvenirNextLTPro-Regular";
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 15px;
-    margin-top: 5px;
-    color: #fff;
-  }
+.share-text {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-top: 5px;
+  color: #fff;
 }
 
 .rating-div {

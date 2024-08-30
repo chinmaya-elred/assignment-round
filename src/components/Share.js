@@ -34,7 +34,7 @@ const Share = () => {
 
   return (
     <div className="share-div" >
-      <div className="share-icon-div" onClick={handleShare}>
+      <div className="share_icon_div" onClick={handleShare}>
         <Image src={share} alt="" />
       </div>
       <div className="share-text">Share</div>
