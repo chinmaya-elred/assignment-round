@@ -15,7 +15,7 @@ const Share = () => {
 
   const handleShare = async () => {
     const time = new Date().getTime().toString().slice(-6);
-    const urlWithTime = url + `&t=${time}`;
+    const urlWithTime = url;
     if (navigator.share) {
       try {
         await navigator.share({
